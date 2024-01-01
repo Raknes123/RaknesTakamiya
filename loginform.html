@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Form</title>
+</head>
+
+<body>
+    <form id="loginForm" action="Blog.html" method="post">
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="username"/></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password"/></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin:</td>
+                <td>
+                    <input type="radio" id="pria" name="jeniskelamin"/><label for="pria">Pria</label>
+                    <input type="radio" id="wanita" name="jeniskelamin"/><label for="wanita">Wanita</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobi:</td>
+                <td>
+                    <input type="checkbox" id="ngoding" name="hobi"/><label for="ngoding">Ngoding</label>
+                    <input type="checkbox" id="belajardb" name="hobi"/><label for="belajardb">Belajar DB</label>
+                    <input type="checkbox" id="privatedebate" name="hobi"/><label for="privatedebate">Private Debate</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Masukan dan Saran:</td>
+                <td><textarea name="feedback"></textarea></td>
+            </tr>
+            <tr>
+                <td>Asal Usul:</td>
+                <td>
+                    <select name="asalusul">
+                        <option value="jawir">Jawir</option>
+                        <option value="ngawi">Ngawi</option>
+                        <option value="jomoks">Jomoks</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" name="submit" id="submit" value="Submit"/></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Script untuk menangani formulir login -->
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Mencegah formulir melakukan submit standar
+
+            // Tangkap data formulir dan lakukan sesuatu dengannya
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            // Lakukan aksi selanjutnya, misalnya, tampilkan pesan, buka halaman lain, dll.
+
+            // Contoh: Redirect ke halaman "Blog.html" dengan parameter query username
+            window.location.href = "Blog.html?username=" + encodeURIComponent(username);
+        });
+    </script>
+</body>
+</html>
